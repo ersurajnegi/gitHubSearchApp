@@ -4,7 +4,6 @@ import { GitHubService } from '../github/github.service';
 @Component({
   selector: 'profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
   user: any;
