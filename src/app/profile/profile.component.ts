@@ -17,6 +17,7 @@ export class ProfileComponent {
   searchUser() {
     this.user = "";
     this.repos = [];
+    this.errorOccured = false;
     // this._gitHubService.getUser(this.userName).subscribe(user => {
     //   this.user = user;
     // });
@@ -29,7 +30,9 @@ export class ProfileComponent {
         this.errorOccured = false;
           this.user = data[0];
           this.repos = data[1];
+      },
+      error => {
+          this.errorOccured = true;
       })
-      
   }
 }
