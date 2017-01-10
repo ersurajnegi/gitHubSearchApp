@@ -3,8 +3,8 @@
     <div class="co-md-12">
         <form class="well">
             <div class="form-group" style="position: relative;">
-                <input type="text" class="form-control" placeholder="Enter Github Username..." 
-                [(ngModel)]="userName" name="userName" (keyup)="searchUser()" >
+                <input type="text" class="form-control" id="search" placeholder="Enter Github Username..." 
+                [(ngModel)]="userName" name="userName" (keyup.enter)="searchUser()" >
                 <span class="glyphicon glyphicon-search" (click)="searchUser()" aria-hidden="true" style="position: absolute;right: 9px;top: 12px;"></span>
             </div>
             
@@ -15,7 +15,7 @@
 <div *ngIf="errorOccured" class="alert alert-danger">
     Some error occured while fetching details.
 </div>
-<div *ngIf="user">
+<div *ngIf="user && !errorOccured">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">

@@ -8,7 +8,7 @@ import {Observable} from 'rxjs/Rx';
 export class GitHubService {
     private _clientId = '0e0a23e463a58f7fb8f8';
     private _clientSecret = 'a925d0fc86d1330608a7d812c8c745998afa10ad';
-    private _baseApiUrl = "http://api.github.com/users/";
+    private _baseApiUrl = "https://api.github.com/users/";
 
     constructor(private _http: Http) {
         console.log("Github service");
