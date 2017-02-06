@@ -9,6 +9,7 @@ export class ProfileComponent {
   user: any;
   repos: any[];
   userName:string = "";
+  isLoading:boolean = false;
   errorOccured: boolean = false;
   constructor(private _gitHubService: GitHubService) {
     this.user = false;
@@ -18,20 +19,16 @@ export class ProfileComponent {
     this.user = "";
     this.repos = [];
     this.errorOccured = false;
-    // this._gitHubService.getUser(this.userName).subscribe(user => {
-    //   this.user = user;
-    // });
-
-    // this._gitHubService.getRepos(this.userName).subscribe(repos => {
-    //   this.repos = repos;
-    // })
+    this.isLoading = true;
     this._gitHubService.getUserAndRepos(this.userName)
       .subscribe(data => {
         this.errorOccured = false;
           this.user = data[0];
           this.repos = data[1];
+          this.isLoading = false;
       },
       error => {
+        this.isLoading = false;
           this.errorOccured = true;
       })
   }
