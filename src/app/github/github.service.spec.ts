@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { GithubService } from './github.service';
+import { GitHubService } from './github.service';
 
-describe('GithubService', () => {
+describe('GitHubService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GithubService]
+      providers: [GitHubService]
     });
   });
 
-  it('should ...', inject([GithubService], (service: GithubService) => {
+  it('should ...', inject([GitHubService], (service: GitHubService) => {
     expect(service).toBeTruthy();
   }));
 });
